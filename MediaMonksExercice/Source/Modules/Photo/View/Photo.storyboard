@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,6 +87,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvP-CH-lkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="204.64767616191907"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="lKR-bt-EPc">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="VNX-b5-SrU" customClass="PhotoDetailViewController" customModule="MediaMonksExercice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Dy-r5-poU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DUe-eP-9Pb">
+                                <rect key="frame" x="16" y="36" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DUe-eP-9Pb" secondAttribute="height" multiplier="1:1" id="gQZ-t4-Eaf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accusamus beatae ad facilis cum similique qui sunt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-Rx-dAO">
+                                <rect key="frame" x="16" y="417" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumId: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sX-Yn-Aeb">
+                                <rect key="frame" x="16" y="389" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2sX-Yn-Aeb" firstAttribute="leading" secondItem="39b-ES-wfR" secondAttribute="leading" constant="16" id="8i9-AC-C1e"/>
+                            <constraint firstItem="39b-ES-wfR" firstAttribute="trailing" secondItem="a3g-Rx-dAO" secondAttribute="trailing" constant="16" id="ARs-Q3-8cb"/>
+                            <constraint firstItem="DUe-eP-9Pb" firstAttribute="leading" secondItem="39b-ES-wfR" secondAttribute="leading" constant="16" id="M8T-p3-UNl"/>
+                            <constraint firstItem="DUe-eP-9Pb" firstAttribute="top" secondItem="39b-ES-wfR" secondAttribute="top" constant="16" id="XVF-hd-bdG"/>
+                            <constraint firstItem="39b-ES-wfR" firstAttribute="trailing" secondItem="2sX-Yn-Aeb" secondAttribute="trailing" constant="16" id="Zft-B3-YLm"/>
+                            <constraint firstItem="39b-ES-wfR" firstAttribute="trailing" secondItem="DUe-eP-9Pb" secondAttribute="trailing" constant="16" id="daP-Ki-BUQ"/>
+                            <constraint firstItem="a3g-Rx-dAO" firstAttribute="top" secondItem="2sX-Yn-Aeb" secondAttribute="bottom" constant="10" id="ird-qS-BOp"/>
+                            <constraint firstItem="a3g-Rx-dAO" firstAttribute="leading" secondItem="39b-ES-wfR" secondAttribute="leading" constant="16" id="sc2-lB-pgs"/>
+                            <constraint firstItem="2sX-Yn-Aeb" firstAttribute="top" secondItem="DUe-eP-9Pb" secondAttribute="bottom" constant="10" id="uf7-Q7-HrW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="39b-ES-wfR"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumId" destination="2sX-Yn-Aeb" id="9VW-81-BSF"/>
+                        <outlet property="photo" destination="DUe-eP-9Pb" id="nis-XZ-la6"/>
+                        <outlet property="photoTitle" destination="a3g-Rx-dAO" id="W1Z-aP-FIF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55P-6W-to0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="204.64767616191907"/>
         </scene>
     </scenes>
 </document>
