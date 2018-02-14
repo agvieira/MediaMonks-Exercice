@@ -28,6 +28,9 @@ opt_in_rules:
   - array_init
   - literal_expression_end_indentation
 
+disabled_rules: # rule identifiers to exclude from running
+ - trailing_whitespace
+
 identifier_name:
   excluded:
     - id
