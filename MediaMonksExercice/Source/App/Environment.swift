@@ -16,4 +16,3 @@ struct Environment: Mappable {
         try baseUrl = map.from("baseUrl")
     }
 }
-
