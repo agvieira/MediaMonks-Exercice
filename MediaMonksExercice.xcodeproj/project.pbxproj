@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		201569BEA72311D8E8F0AFD1 /* Pods_MediaMonksExercice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EC7CCFC2BA8E93EE49345C /* Pods_MediaMonksExercice.framework */; };
 		472EF35A2034AD9B00098B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EF3462034AD9B00098B0E /* Assets.xcassets */; };
-		472EF35B2034AD9B00098B0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 472EF3472034AD9B00098B0E /* Info.plist */; };
 		472EF35C2034AD9B00098B0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF34A2034AD9B00098B0E /* AppDelegate.swift */; };
 		472EF35D2034AD9B00098B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EF34C2034AD9B00098B0E /* LaunchScreen.storyboard */; };
 		472EF35E2034AD9B00098B0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EF34E2034AD9B00098B0E /* Main.storyboard */; };
@@ -241,6 +240,7 @@
 			buildConfigurationList = 47717EBA2034AC1A00262C9F /* Build configuration list for PBXNativeTarget "MediaMonksExercice" */;
 			buildPhases = (
 				12425291E9A091E7745E2FD9 /* [CP] Check Pods Manifest.lock */,
+				472EF3602034B20000098B0E /* SwiftLint */,
 				47717E992034AC1A00262C9F /* Sources */,
 				47717E9A2034AC1A00262C9F /* Frameworks */,
 				47717E9B2034AC1A00262C9F /* Resources */,
@@ -323,7 +323,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				472EF35D2034AD9B00098B0E /* LaunchScreen.storyboard in Resources */,
-				472EF35B2034AD9B00098B0E /* Info.plist in Resources */,
 				472EF35A2034AD9B00098B0E /* Assets.xcassets in Resources */,
 				472EF35E2034AD9B00098B0E /* Main.storyboard in Resources */,
 			);
@@ -371,6 +370,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MediaMonksExerciceTests/Pods-MediaMonksExerciceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		472EF3602034B20000098B0E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		651FC31CF5EA41DCE2583F6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
