@@ -13,6 +13,12 @@
 		472EF35D2034AD9B00098B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EF34C2034AD9B00098B0E /* LaunchScreen.storyboard */; };
 		472EF35E2034AD9B00098B0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EF34E2034AD9B00098B0E /* Main.storyboard */; };
 		472EF35F2034AD9B00098B0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF3542034AD9B00098B0E /* ViewController.swift */; };
+		472EF3682034B86800098B0E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF3672034B86800098B0E /* RequestProtocol.swift */; };
+		472EF36A2034B89B00098B0E /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF3692034B89B00098B0E /* DataError.swift */; };
+		472EF36C2034B8BD00098B0E /* Response+MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF36B2034B8BD00098B0E /* Response+MapModel.swift */; };
+		472EF36E2034BAB100098B0E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF36D2034BAB100098B0E /* Environment.swift */; };
+		472EF3702034BBC800098B0E /* TargetType+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF36F2034BBC800098B0E /* TargetType+Environment.swift */; };
+		472EF3722034BE1200098B0E /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EF3712034BE1200098B0E /* RequestProvider.swift */; };
 		47717EB62034AC1A00262C9F /* MediaMonksExerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47717EB52034AC1A00262C9F /* MediaMonksExerciceTests.swift */; };
 		A725992F0375DCC9EE001996 /* Pods_MediaMonksExerciceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AEE6FF551442C863734F46 /* Pods_MediaMonksExerciceTests.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +42,12 @@
 		472EF34D2034AD9B00098B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		472EF34F2034AD9B00098B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472EF3542034AD9B00098B0E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		472EF3672034B86800098B0E /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		472EF3692034B89B00098B0E /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		472EF36B2034B8BD00098B0E /* Response+MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+MapModel.swift"; sourceTree = "<group>"; };
+		472EF36D2034BAB100098B0E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		472EF36F2034BBC800098B0E /* TargetType+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Environment.swift"; sourceTree = "<group>"; };
+		472EF3712034BE1200098B0E /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		47717E9D2034AC1A00262C9F /* MediaMonksExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMonksExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47717EB12034AC1A00262C9F /* MediaMonksExerciceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaMonksExerciceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47717EB52034AC1A00262C9F /* MediaMonksExerciceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMonksExerciceTests.swift; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				472EF34A2034AD9B00098B0E /* AppDelegate.swift */,
+				472EF36D2034BAB100098B0E /* Environment.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -109,6 +122,11 @@
 		472EF34B2034AD9B00098B0E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				472EF3672034B86800098B0E /* RequestProtocol.swift */,
+				472EF3692034B89B00098B0E /* DataError.swift */,
+				472EF36B2034B8BD00098B0E /* Response+MapModel.swift */,
+				472EF36F2034BBC800098B0E /* TargetType+Environment.swift */,
+				472EF3712034BE1200098B0E /* RequestProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -472,7 +490,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472EF3682034B86800098B0E /* RequestProtocol.swift in Sources */,
+				472EF36E2034BAB100098B0E /* Environment.swift in Sources */,
+				472EF36C2034B8BD00098B0E /* Response+MapModel.swift in Sources */,
+				472EF3702034BBC800098B0E /* TargetType+Environment.swift in Sources */,
+				472EF3722034BE1200098B0E /* RequestProvider.swift in Sources */,
 				472EF35F2034AD9B00098B0E /* ViewController.swift in Sources */,
+				472EF36A2034B89B00098B0E /* DataError.swift in Sources */,
 				472EF35C2034AD9B00098B0E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +651,7 @@
 			baseConfigurationReference = 4135F9A8B07BF875FC25910F /* Pods-MediaMonksExercice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "https://jsonplaceholder.typicode.com/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMH73LA6AA;
 				INFOPLIST_FILE = MediaMonksExercice/Resource/Info.plist;
@@ -643,6 +668,7 @@
 			baseConfigurationReference = F80C82189B611ADCD2EC5994 /* Pods-MediaMonksExercice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "https://jsonplaceholder.typicode.com/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMH73LA6AA;
 				INFOPLIST_FILE = MediaMonksExercice/Resource/Info.plist;
