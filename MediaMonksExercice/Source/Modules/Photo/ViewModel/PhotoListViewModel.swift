@@ -25,7 +25,7 @@ final class PhotoListViewModel: PhotoListViewModelType {
     var loading = Variable(false)
     
     // MARK: Private variables
-    private var observablePhotos: Observable<[Photo]> = Observable.from([Photo]())
+    private var observablePhotos: Observable<[Photo]> = Observable.from(optional: [Photo]())
     private let disposeBag = DisposeBag()
     private typealias Target = PhotoListTargetType
     private var provider: RequestProvider = RequestProvider<Target>()

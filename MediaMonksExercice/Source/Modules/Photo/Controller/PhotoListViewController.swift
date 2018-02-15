@@ -49,7 +49,9 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
         self.viewModel?.error.asObservable()
             .filter { $0 != nil }
             .subscribe(onNext: { error in
-                AlertController.alert(withTitle: error?.title, message: error?.msg, actionTitle: error?.actionsTitles[0])
+                AlertController.alert(withTitle: error?.title,
+                                      message: error?.msg,
+                                      actionTitle: error?.actionsTitles[0])
             }).disposed(by: self.disposeBag)
     }
     
