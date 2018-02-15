@@ -8,7 +8,8 @@
 
 import UIKit
 
-final class PhotoDetailViewController: UIViewController {
+final class PhotoDetailViewController: UIViewController, StoryboardLoadable {
+    static var storyboardName: String = "Photo"
     
     @IBOutlet weak private var photo: UIImageView!
     @IBOutlet weak private var albumId: UILabel!

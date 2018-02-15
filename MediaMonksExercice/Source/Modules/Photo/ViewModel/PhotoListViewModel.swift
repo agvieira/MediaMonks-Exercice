@@ -27,9 +27,14 @@ final class PhotoListViewModel: PhotoListViewModelType {
     private let disposeBag = DisposeBag()
     private typealias Target = PhotoListTargetType
     private var provider: RequestProvider = RequestProvider<Target>()
+    private var albumId: Int
+    
+    init(albumId: Int) {
+        self.albumId = albumId
+    }
     
     func requestPhotos() {
-        self.observablePhotos = provider.requestArray(Target.getPhotos(albumId: 1))
+        self.observablePhotos = provider.requestArray(Target.getPhotos(albumId: self.albumId))
         self.observablePhotos.subscribe(onNext: {[weak self] photos in
             self?.photos.value = photos
             }, onError: {[weak self] _ in
