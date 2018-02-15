@@ -16,7 +16,7 @@ extension UIImageView {
             let resource = ImageResource(downloadURL: imageUrl, cacheKey: url)
             self.kf.setImage(with: resource,
                              placeholder: UIImage(named: placeholder),
-                             options: nil,
+                             options: [.transition(.fade(0.3))],
                              progressBlock: nil,
                              completionHandler: nil)
         } else {
@@ -29,7 +29,7 @@ extension UIImageView {
             let resource = ImageResource(downloadURL: imageUrl, cacheKey: url?.absoluteString)
             self.kf.setImage(with: resource,
                              placeholder: UIImage(named: placeholder),
-                             options: nil,
+                             options: [.transition(.fade(0.3))],
                              progressBlock: nil,
                              completionHandler: nil)
         } else {
