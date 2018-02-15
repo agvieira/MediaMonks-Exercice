@@ -46,18 +46,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4M9-4W-vSD">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="XNg-Jd-pro"/>
+                                    <constraint firstAttribute="width" constant="37" id="sM0-Bl-AdG"/>
+                                </constraints>
+                                <color key="color" red="0.35696648316062174" green="0.35696648316062174" blue="0.35696648316062174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qDB-7D-1N9" firstAttribute="bottom" secondItem="WKY-1R-0nP" secondAttribute="bottom" id="8UY-oA-j6K"/>
                             <constraint firstItem="WKY-1R-0nP" firstAttribute="leading" secondItem="qDB-7D-1N9" secondAttribute="leading" id="N8i-DI-9kQ"/>
+                            <constraint firstItem="4M9-4W-vSD" firstAttribute="centerX" secondItem="0FE-bo-DWh" secondAttribute="centerX" id="RdJ-Kj-6zf"/>
                             <constraint firstItem="WKY-1R-0nP" firstAttribute="top" secondItem="qDB-7D-1N9" secondAttribute="top" id="YkH-5Z-kEH"/>
                             <constraint firstItem="qDB-7D-1N9" firstAttribute="trailing" secondItem="WKY-1R-0nP" secondAttribute="trailing" id="eKZ-n5-tgr"/>
+                            <constraint firstItem="4M9-4W-vSD" firstAttribute="centerY" secondItem="0FE-bo-DWh" secondAttribute="centerY" id="eVd-te-q9I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qDB-7D-1N9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Album" id="xgU-zU-PvV"/>
                     <connections>
+                        <outlet property="activity" destination="4M9-4W-vSD" id="zoU-Ne-MDZ"/>
                         <outlet property="tableView" destination="WKY-1R-0nP" id="MZX-eI-KRZ"/>
                     </connections>
                 </viewController>

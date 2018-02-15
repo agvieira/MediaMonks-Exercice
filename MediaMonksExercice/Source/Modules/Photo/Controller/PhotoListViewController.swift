@@ -16,6 +16,7 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
     
     // MARK: Outlet
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var activity: UIActivityIndicatorView!
     
     // MARK: Private Variable
     private let disposeBag = DisposeBag()
@@ -50,6 +51,12 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
             .subscribe(onNext: { error in
                 AlertController.alert(withTitle: error?.title, message: error?.msg, actionTitle: error?.actionsTitles[0])
             }).disposed(by: self.disposeBag)
+    }
+    
+    private func setupBindLoading() {
+        self.viewModel?.loading.asObservable().subscribe(onNext: {[weak self] loading in
+            loading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
+        }).disposed(by: self.disposeBag)
     }
     
     private func setupHandlerTableView() {
