@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import SDCAlertView
 import UIKit
 
 final class PhotoListViewController: UIViewController, StoryboardLoadable {
@@ -40,9 +41,11 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
     }
     
     private func setupBindError() {
-        self.viewModel?.error.asObservable().subscribe(onNext: { error in
-            print(error)
-        }).disposed(by: self.disposeBag)
+        self.viewModel?.error.asObservable()
+            .filter { $0 != nil }
+            .subscribe(onNext: { error in
+                AlertController.alert(withTitle: error?.title, message: error?.msg, actionTitle: error?.actionsTitles[0])
+            }).disposed(by: self.disposeBag)
     }
     
     private func setupHandlerTableView() {

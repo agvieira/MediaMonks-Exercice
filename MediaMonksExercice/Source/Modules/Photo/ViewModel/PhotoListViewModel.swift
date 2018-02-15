@@ -11,7 +11,7 @@ import RxSwift
 
 protocol PhotoListViewModelType {
     var photos: Variable<[Photo]> { get }
-    var error: Variable<String> { get }
+    var error: Variable<GenericError?> { get }
     
     func requestPhotos()
 }
@@ -19,7 +19,7 @@ protocol PhotoListViewModelType {
 final class PhotoListViewModel: PhotoListViewModelType {
 
     // MARK: Public Variables
-    var error = Variable("")
+    var error = Variable<GenericError?>(nil)
     var photos = Variable([Photo]())
     
     // MARK: Private variables
@@ -38,7 +38,8 @@ final class PhotoListViewModel: PhotoListViewModelType {
         self.observablePhotos.subscribe(onNext: {[weak self] photos in
             self?.photos.value = photos
             }, onError: {[weak self] _ in
-                self?.error.value = "There was a problem with our servers\nplease try again later"
+                self?.error.value = GenericError(title: "Connection Error",
+                                                 msg: "There was a problem with our servers\nplease try again later")
         }).disposed(by: self.disposeBag)
     }
 }

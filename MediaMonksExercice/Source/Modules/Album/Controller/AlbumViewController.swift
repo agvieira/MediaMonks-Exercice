@@ -8,7 +8,9 @@
 
 import RxCocoa
 import RxSwift
+import SDCAlertView
 import UIKit
+
 
 final class AlbumListViewController: UIViewController {
     
@@ -34,8 +36,10 @@ final class AlbumListViewController: UIViewController {
     }
     
     private func setupBindError() {
-        viewModel.error.asObservable().subscribe(onNext: { error in
-            print(error)
+        viewModel.error.asObservable()
+            .filter { $0 != nil }
+            .subscribe(onNext: { error in
+            AlertController.alert(withTitle: error?.title, message: error?.msg, actionTitle: error?.actionsTitles[0])
         }).disposed(by: self.disposeBag)
     }
     
