@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo List View Controller-->
+        <!--Photo-->
         <scene sceneID="mZi-1W-Wqc">
             <objects>
-                <viewController id="4NI-xm-6ju" customClass="PhotoListViewController" customModule="MediaMonksExercice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoListViewController" title="Photo" id="4NI-xm-6ju" customClass="PhotoListViewController" customModule="MediaMonksExercice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zo9-Gd-kZN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="204.64767616191907"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="lKR-bt-EPc">
             <objects>
-                <viewController storyboardIdentifier="PhotoDetailViewController" id="VNX-b5-SrU" customClass="PhotoDetailViewController" customModule="MediaMonksExercice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDetailViewController" title="Detail" id="VNX-b5-SrU" customClass="PhotoDetailViewController" customModule="MediaMonksExercice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Dy-r5-poU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

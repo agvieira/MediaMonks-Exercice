@@ -10,11 +10,12 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class PhotoListViewController: UIViewController {
+final class PhotoListViewController: UIViewController, StoryboardLoadable {
+    static var storyboardName: String = "Photo"
     
     @IBOutlet weak private var tableView: UITableView!
     private let disposeBag = DisposeBag()
-    private var viewModel: PhotoListViewModelType = PhotoListViewModel()
+    private var viewModel: PhotoListViewModelType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,15 @@ final class PhotoListViewController: UIViewController {
         self.setupBindTableView()
         self.setupBindError()
         self.setupHandlerTableView()
-        viewModel.requestPhotos()
+        self.viewModel?.requestPhotos()
+    }
+    
+    func prepareForShow(viewModel: PhotoListViewModelType) {
+        self.viewModel = viewModel
     }
     
     private func setupBindTableView() {
-        viewModel.photos.asObservable()
+        self.viewModel?.photos.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "PhotoTableViewCell",
                                          cellType: PhotoTableViewCell.self)) { (_, photo: Photo, cell) in
                                             cell.setupCell(viewModel: PhotoCellViewModel(photo: photo))
@@ -35,14 +40,16 @@ final class PhotoListViewController: UIViewController {
     }
     
     private func setupBindError() {
-        viewModel.error.asObservable().subscribe(onNext: { error in
+        self.viewModel?.error.asObservable().subscribe(onNext: { error in
             print(error)
         }).disposed(by: self.disposeBag)
     }
     
     private func setupHandlerTableView() {
         self.tableView.rx.modelSelected(Photo.self).subscribe(onNext: { photo in
-            print(photo.title)
+            let photoDetail = PhotoDetailViewController.loadFromStoryboard()
+            photoDetail.prepareForShow(viewModel: PhotoDetailViewModel(photo: photo))
+            self.navigationController?.pushViewController(photoDetail, animated: true)
         }).disposed(by: self.disposeBag)
     }
 }

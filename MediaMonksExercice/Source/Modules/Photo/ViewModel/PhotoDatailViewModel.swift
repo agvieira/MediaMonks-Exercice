@@ -19,7 +19,7 @@ final class PhotoDetailViewModel: PhotoDetailViewModelType {
     
     var photo: Photo?
     var photoUrl: URL? {
-        return self.photo?.thumbnailUrl
+        return self.photo?.url
     }
     var photoTitle: String {
         return self.photo?.title ?? ""

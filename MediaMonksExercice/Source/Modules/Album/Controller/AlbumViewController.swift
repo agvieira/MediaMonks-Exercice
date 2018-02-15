@@ -41,7 +41,9 @@ final class AlbumListViewController: UIViewController {
     
     private func setupHandlerTableView() {
         self.tableView.rx.modelSelected(Album.self).subscribe(onNext: { album in
-            print(album.title)
+            let photoList = PhotoListViewController.loadFromStoryboard()
+            photoList.prepareForShow(viewModel: PhotoListViewModel(albumId: album.albumId))
+            self.navigationController?.pushViewController(photoList, animated: true)
         }).disposed(by: self.disposeBag)
     }
 }
