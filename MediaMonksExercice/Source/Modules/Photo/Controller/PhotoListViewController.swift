@@ -29,6 +29,7 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
         self.setupBindTableView()
         self.setupBindError()
         self.setupHandlerTableView()
+        self.setupBindLoading()
         self.viewModel?.requestPhotos()
     }
     
