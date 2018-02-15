@@ -49,7 +49,8 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
     private func setupBindError() {
         self.viewModel?.error.asObservable()
             .filter { $0 != nil }
-            .subscribe(onNext: { error in
+            .subscribe(onNext: {[weak self] error in
+                self?.navigationController?.popViewController(animated: true)
                 AlertController.alert(withTitle: error?.title,
                                       message: error?.msg,
                                       actionTitle: error?.actionsTitles[0])
