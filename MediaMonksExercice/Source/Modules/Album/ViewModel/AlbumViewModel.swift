@@ -11,7 +11,7 @@ import RxSwift
 
 protocol AlbumViewModelType {
     var albums: Variable<[Album]> { get }
-    var error: Variable<String> { get }
+    var error: Variable<GenericError?> { get }
     
     func requestAlbums()
 }
@@ -19,7 +19,7 @@ protocol AlbumViewModelType {
 final class AlbumViewModel: AlbumViewModelType {
     
     // MARK: Public Variables
-    var error = Variable("")
+    var error = Variable<GenericError?>(nil)
     var albums = Variable([Album]())
     
     // MARK: Private variables
@@ -33,7 +33,8 @@ final class AlbumViewModel: AlbumViewModelType {
         self.observableAlbums.subscribe(onNext: {[weak self] albums in
             self?.albums.value = albums
         }, onError: {[weak self] _ in
-            self?.error.value = "There was a problem with our servers\nplease try again later"
+            self?.error.value = GenericError(title: "Connection Error",
+                                             msg: "There was a problem with our servers\nplease try again later")
         }).disposed(by: self.disposeBag)
     }
 }
