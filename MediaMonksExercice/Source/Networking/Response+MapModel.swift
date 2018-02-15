@@ -12,11 +12,9 @@ import Moya
 
 public extension Moya.Response {
     public func mapModel<Model: Mappable>() throws -> Model {
-        // we need to use custom mapToJSON method to map the error throw from moya parser
         return try self.mapModel(json: self.mapToJSON())
     }
     public func mapModel<Model: Mappable>() throws -> [Model] {
-        // we need to use custom mapToJSON method to map the error throw from moya parser
         let json = try self.mapToJSON()
         guard let jsonArray = json as? NSArray else {
             throw DataError.jsonParse(.invalid(json), self)

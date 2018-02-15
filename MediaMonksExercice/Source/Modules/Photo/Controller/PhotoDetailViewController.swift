@@ -28,6 +28,7 @@ final class PhotoDetailViewController: UIViewController, StoryboardLoadable {
         self.viewModel = viewModel
     }
     
+    // MARK: Setup Methods
     private func setupTitle() {
         self.photoTitle.text = self.viewModel?.photoTitle
     }

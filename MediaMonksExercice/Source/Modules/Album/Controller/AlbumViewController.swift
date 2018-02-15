@@ -26,6 +26,7 @@ final class AlbumListViewController: UIViewController {
         viewModel.requestAlbums()
     }
     
+    // MARK: Setup Methods
     private func setupBindTableView() {
         viewModel.albums.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "AlbumCell",
