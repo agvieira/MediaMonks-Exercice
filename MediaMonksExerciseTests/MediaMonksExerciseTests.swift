@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import MediaMonksExercice
+@testable import MediaMonksExercise
 
-class MediaMonksExerciceTests: XCTestCase {
+class MediaMonksExerciseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
