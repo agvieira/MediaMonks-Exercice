@@ -9,22 +9,18 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Result (3.2.4)
-  - Reusable (4.0.0):
-    - Reusable/Storyboard (= 4.0.0)
-    - Reusable/View (= 4.0.0)
-  - Reusable/Storyboard (4.0.0)
-  - Reusable/View (4.0.0)
   - RxCocoa (4.1.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.1)
+  - SDCAlertView (8.0.1)
   - SwiftLint (0.24.2)
 
 DEPENDENCIES:
   - Kingfisher
   - ModelMapper
   - Moya/RxSwift
-  - Reusable
   - RxCocoa
+  - SDCAlertView
   - SwiftLint
 
 SPEC CHECKSUMS:
@@ -33,11 +29,11 @@ SPEC CHECKSUMS:
   ModelMapper: 467f49f6f187b4e6cde2599e7cc5968cefa3f19b
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+  SDCAlertView: 0dac88159108e755a78ca8d789b3b82305accae4
   SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
 
-PODFILE CHECKSUM: 9f46ae927d3a095af639c1ec323c0dbb734699b0
+PODFILE CHECKSUM: 9f2c7d4c464b4019383f2f18550962f0f5ef19d6
 
 COCOAPODS: 1.4.0

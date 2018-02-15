@@ -6,7 +6,7 @@ target 'MediaMonksExercice' do
   use_frameworks!
 
   pod 'SwiftLint'
-  pod 'Reusable'
+  pod 'SDCAlertView'
   pod 'RxCocoa'
   pod 'Kingfisher'
   pod 'Moya/RxSwift'
