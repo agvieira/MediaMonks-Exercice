@@ -25,7 +25,7 @@ final class AlbumViewModel: AlbumViewModelType {
     var loading = Variable(false)
     
     // MARK: Private variables
-    private var observableAlbums: Observable<[Album]> = Observable.from([Album]())
+    private var observableAlbums: Observable<[Album]> = Observable.from(optional: [Album]())
     private let disposeBag = DisposeBag()
     private typealias Target = AlbumTargetType
     private var provider: RequestProvider = RequestProvider<Target>()

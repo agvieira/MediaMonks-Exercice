@@ -11,7 +11,6 @@ import RxSwift
 import SDCAlertView
 import UIKit
 
-
 final class AlbumListViewController: UIViewController {
     
     // MARK: Outlet
