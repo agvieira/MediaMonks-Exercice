@@ -14,7 +14,10 @@ import UIKit
 final class PhotoListViewController: UIViewController, StoryboardLoadable {
     static var storyboardName: String = "Photo"
     
+    // MARK: Outlet
     @IBOutlet weak private var tableView: UITableView!
+    
+    // MARK: Private Variable
     private let disposeBag = DisposeBag()
     private var viewModel: PhotoListViewModelType?
 
@@ -32,6 +35,7 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
         self.viewModel = viewModel
     }
     
+    // MARK: Setup Methods
     private func setupBindTableView() {
         self.viewModel?.photos.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "PhotoTableViewCell",
