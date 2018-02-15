@@ -70,17 +70,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iGv-pe-jbB">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Jhy-lq-XMI"/>
+                                    <constraint firstAttribute="width" constant="37" id="w9e-xS-DFM"/>
+                                </constraints>
+                                <color key="color" red="0.35696648320000002" green="0.35696648320000002" blue="0.35696648320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QZm-SA-Odn" firstAttribute="bottom" secondItem="xbK-cD-cc3" secondAttribute="bottom" id="3KH-A6-ish"/>
                             <constraint firstItem="QZm-SA-Odn" firstAttribute="trailing" secondItem="xbK-cD-cc3" secondAttribute="trailing" id="3Rd-Yg-ydY"/>
                             <constraint firstItem="xbK-cD-cc3" firstAttribute="top" secondItem="QZm-SA-Odn" secondAttribute="top" id="7Yx-tO-sbA"/>
+                            <constraint firstItem="iGv-pe-jbB" firstAttribute="centerY" secondItem="Zo9-Gd-kZN" secondAttribute="centerY" id="cw9-a9-5hv"/>
+                            <constraint firstItem="iGv-pe-jbB" firstAttribute="centerX" secondItem="Zo9-Gd-kZN" secondAttribute="centerX" id="dx7-73-5O8"/>
                             <constraint firstItem="xbK-cD-cc3" firstAttribute="leading" secondItem="QZm-SA-Odn" secondAttribute="leading" id="r2l-p5-gkg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZm-SA-Odn"/>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="iGv-pe-jbB" id="vh0-1j-irv"/>
                         <outlet property="tableView" destination="xbK-cD-cc3" id="g3i-SC-j4R"/>
                     </connections>
                 </viewController>
