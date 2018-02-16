@@ -25,6 +25,6 @@ This is an app with a simple album list, photo list and photo detail application
   `$ sudo gem install cocoapods`    
   Now, go to the project folder and execute the command `$ pod install`
 
-4. Great :+1:, now you can open the project clicking on the file `MediaMonksExercice.xcworkspace` 
+4. Great :+1:, now you can open the project clicking on the file `MediaMonksExercise.xcworkspace` 
   
   
