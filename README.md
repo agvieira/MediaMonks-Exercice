@@ -1,4 +1,4 @@
-# MediaMonks-Exercice
+# MediaMonks-Exercise
 
 Developer by André Vieira   
 e-mail: vieira.agp@gmail.com  
