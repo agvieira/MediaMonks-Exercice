@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473682E420365EE200D5DA74 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE7402036399E003941F2 /* PhotoCellViewModel.swift */; };
+		473682E520365EEE00D5DA74 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE7302036399E003941F2 /* Photo.swift */; };
 		477BE7502036399E003941F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE7232036399E003941F2 /* Environment.swift */; };
 		477BE7512036399E003941F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477BE7242036399E003941F2 /* LaunchScreen.storyboard */; };
 		477BE7522036399E003941F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE7262036399E003941F2 /* AppDelegate.swift */; };
@@ -642,7 +644,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473682E520365EEE00D5DA74 /* Photo.swift in Sources */,
 				47AE168B20363CE800E5764F /* MediaMonksExerciseTests.swift in Sources */,
+				473682E420365EE200D5DA74 /* PhotoCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

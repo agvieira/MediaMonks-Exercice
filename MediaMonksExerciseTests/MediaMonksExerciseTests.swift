@@ -7,30 +7,35 @@
 //
 
 import XCTest
+import Mapper
 @testable import MediaMonksExercise
 
 class MediaMonksExerciseTests: XCTestCase {
     
+    var mapper: Mapper!
+    var photo: Photo!
+    var viewModel: PhotoCellViewModelType!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let json = ["albumId": 1,
+                    "id": 1,
+                    "title": "teste",
+                    "url": "http://google.com",
+                    "thumbnailUrl": "http://google.com"] as [String : Any]
+        mapper = Mapper(JSON: json as NSDictionary)
+        photo = try! Photo(map: mapper)
+        viewModel = PhotoCellViewModel(photo: photo)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGetPhotoUrl() {
+        XCTAssertNotNil(viewModel.photoUrl)
+        XCTAssertEqual(viewModel.photoUrl?.absoluteString, "http://google.com")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGetPhotoTitle() {
+        XCTAssertNotNil(viewModel.photoTitle)
+        XCTAssertEqual(viewModel.photoTitle, "teste")
     }
     
 }

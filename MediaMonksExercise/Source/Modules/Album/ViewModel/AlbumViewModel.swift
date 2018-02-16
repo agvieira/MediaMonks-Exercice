@@ -28,7 +28,11 @@ final class AlbumViewModel: AlbumViewModelType {
     private var observableAlbums: Observable<[Album]> = Observable.from(optional: [Album]())
     private let disposeBag = DisposeBag()
     private typealias Target = AlbumTargetType
-    private var provider: RequestProvider = RequestProvider<Target>()
+    private var provider: RequestProvider<Target>
+    
+    init(provider: RequestProvider<AlbumTargetType> = RequestProvider<Target>()) {
+        self.provider = provider
+    }
     
     func requestAlbums() {
         self.loading.value = true

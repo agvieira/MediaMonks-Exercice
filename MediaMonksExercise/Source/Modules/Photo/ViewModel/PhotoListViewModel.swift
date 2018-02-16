@@ -28,11 +28,12 @@ final class PhotoListViewModel: PhotoListViewModelType {
     private var observablePhotos: Observable<[Photo]> = Observable.from(optional: [Photo]())
     private let disposeBag = DisposeBag()
     private typealias Target = PhotoListTargetType
-    private var provider: RequestProvider = RequestProvider<Target>()
+    private var provider: RequestProvider<Target>
     private var albumId: Int
     
-    init(albumId: Int) {
+    init(albumId: Int, provider: RequestProvider<PhotoListTargetType> = RequestProvider<Target>()) {
         self.albumId = albumId
+        self.provider = provider
     }
     
     func requestPhotos() {

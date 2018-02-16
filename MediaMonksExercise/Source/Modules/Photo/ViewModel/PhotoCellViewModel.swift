@@ -9,13 +9,12 @@
 import Foundation
 
 protocol PhotoCellViewModelType {
-    var photo: Photo? { get }
     var photoUrl: URL? { get }
     var photoTitle: String { get }
 }
 
 final class PhotoCellViewModel: PhotoCellViewModelType {
-    var photo: Photo?
+    private var photo: Photo?
     var photoUrl: URL? {
         return self.photo?.thumbnailUrl
     }
