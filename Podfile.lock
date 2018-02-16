@@ -8,6 +8,8 @@ PODS:
   - Moya/RxSwift (10.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
   - Result (3.2.4)
   - RxCocoa (4.1.1):
     - RxSwift (~> 4.0)
@@ -19,6 +21,8 @@ DEPENDENCIES:
   - Kingfisher
   - ModelMapper
   - Moya/RxSwift
+  - Nimble
+  - Quick
   - RxCocoa
   - SDCAlertView
   - SwiftLint
@@ -28,12 +32,14 @@ SPEC CHECKSUMS:
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   ModelMapper: 467f49f6f187b4e6cde2599e7cc5968cefa3f19b
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
   SDCAlertView: 0dac88159108e755a78ca8d789b3b82305accae4
   SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
 
-PODFILE CHECKSUM: 3ee92e966abc2ba2f6e046d044b956df26e9e030
+PODFILE CHECKSUM: 7b8711b349802c3ee14744160f182a6d4734e1ad
 
 COCOAPODS: 1.4.0
