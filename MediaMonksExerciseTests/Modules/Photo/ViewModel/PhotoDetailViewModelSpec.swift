@@ -1,5 +1,5 @@
 //
-//  PhotoCellViewModelSpec.swift
+//  PhotoDetailViewModelSpec.swift
 //  MediaMonksExerciseTests
 //
 //  Created by Andre Vieira on 15/02/18.
@@ -13,11 +13,11 @@ import Quick
 
 @testable import MediaMonksExercise
 
-class PhotoCellViewModelSpec: QuickSpec {
+class PhotoDetailViewModelSpec: QuickSpec {
     
     var mapper: Mapper!
     var photo: Photo!
-    var viewModel: PhotoCellViewModelType!
+    var viewModel: PhotoDetailViewModelType!
     let json = ["albumId": 1,
                 "id": 1,
                 "title": "title",
@@ -29,7 +29,7 @@ class PhotoCellViewModelSpec: QuickSpec {
             beforeEach {
                 self.mapper = Mapper(JSON: self.json as NSDictionary)
                 self.photo = try! Photo(map: self.mapper)
-                self.viewModel = PhotoCellViewModel(photo: self.photo)
+                self.viewModel = PhotoDetailViewModel(photo: self.photo)
             }
             
             it("has photo url", closure: {
@@ -40,6 +40,11 @@ class PhotoCellViewModelSpec: QuickSpec {
             it("has photo title", closure: {
                 expect(self.viewModel.photoTitle).toNot(beNil())
                 expect(self.viewModel.photoTitle).to(equal("title"))
+            })
+            
+            it("has album desc", closure: {
+                expect(self.viewModel.albumDesc).toNot(beNil())
+                expect(self.viewModel.albumDesc).to(equal("album id 1"))
             })
         }
     }
