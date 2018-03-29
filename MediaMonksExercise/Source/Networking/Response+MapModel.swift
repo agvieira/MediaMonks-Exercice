@@ -8,9 +8,8 @@
 
 import Foundation
 import Mapper
-import Moya
 
-public extension Moya.Response {
+public extension Data {
     public func mapModel<Model: Mappable>() throws -> Model {
         return try self.mapModel(json: self.mapToJSON())
     }
@@ -24,9 +23,7 @@ public extension Moya.Response {
     
     private func mapToJSON() throws -> Any {
         do {
-            return try self.mapJSON()
-        } catch let error as MoyaError {
-            throw DataError.fromMoya(error)
+            return try JSONSerialization.jsonObject(with: self, options: [])
         } catch {
             throw DataError.underlying(error)
         }
@@ -40,8 +37,6 @@ public extension Moya.Response {
         do {
             let json = try Model(map: Mapper(JSON: jsonDictionary))
             return json
-        } catch let error as MapperError {
-            throw DataError.jsonParse(.fromModelMapper(error), self)
         } catch {
             throw DataError.underlying(error)
         }

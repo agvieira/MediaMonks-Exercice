@@ -8,7 +8,6 @@
 
 import Foundation
 import Mapper
-import Moya
 
 extension TargetType {
     var environment: Environment {

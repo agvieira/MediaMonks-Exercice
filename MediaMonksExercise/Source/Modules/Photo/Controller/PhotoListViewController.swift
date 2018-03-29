@@ -59,7 +59,9 @@ final class PhotoListViewController: UIViewController, StoryboardLoadable {
     
     private func setupBindLoading() {
         self.viewModel?.loading.asObservable().subscribe(onNext: {[weak self] loading in
-            loading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
+            DispatchQueue.main.async {
+                loading ? self?.activity.startAnimating() : self?.activity.stopAnimating()
+            }
         }).disposed(by: self.disposeBag)
     }
     

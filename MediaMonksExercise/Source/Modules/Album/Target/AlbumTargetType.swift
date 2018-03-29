@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Moya
 
 enum AlbumTargetType {
     case getAlbums
 }
 
 extension AlbumTargetType: TargetType {
+    
     var headers: [String: String]? { return nil }
     
     var baseURL: URL {
@@ -27,19 +27,18 @@ extension AlbumTargetType: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    var method: HTTPMethod {
         switch self {
         case .getAlbums:
-            return Moya.Method.get
+            return .get
         }
     }
     
-    var sampleData: Data {
-        return Data()
-    }
-    
-    var task: Task {
-        return .requestPlain
+    var parameters: [String: Any]? {
+        switch self {
+        case .getAlbums:
+            return nil
+        }
     }
     
     var parameterEncoding: ParameterEncoding {

@@ -9,7 +9,6 @@ target 'MediaMonksExercise' do
   pod 'SDCAlertView'
   pod 'RxCocoa'
   pod 'Kingfisher'
-  pod 'Moya/RxSwift'
   pod 'ModelMapper'
 
   target 'MediaMonksExerciseTests' do

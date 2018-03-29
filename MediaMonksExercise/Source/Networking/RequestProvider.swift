@@ -8,53 +8,62 @@
 
 import Foundation
 import Mapper
-import Moya
 import RxSwift
 
 final class RequestProvider<Target: TargetType>: RequestProtocol {
+    private let endpoint: ((_ target: Target) -> URLRequest)
     
-    private let provider: MoyaProvider<Target>
-    
-    public init(endpointClosure: @escaping MoyaProvider<Target>.EndpointClosure = MoyaProvider.defaultEndpointMapping,
-                plugins: [PluginType] = []) {
-        
-        let endpointClosureWithDefaultHeaders = { (target: Target) -> Endpoint<Target> in
-            return MoyaProvider.defaultEndpointMapping(for: target)
+    public init() {
+        endpoint = { (target: Target) -> URLRequest in
+            let request = URLRequest(url: URL(target: target))
+            return request
         }
-        self.provider = MoyaProvider(endpointClosure: endpointClosureWithDefaultHeaders)
     }
     
     func requestArray<Model: Mappable>(_ target: Target) -> Observable<[Model]> {
         return self.doRequest(target).flatMap({ response -> Observable<[Model]> in
-            return Observable.just(try response.mapModel())
+            return Observable.just(try response.data.mapModel())
         })
     }
     
     func requestObject<Model: Mappable>(_ target: Target) -> Observable<Model> {
         return self.doRequest(target).flatMap({ response -> Observable<Model> in
-            return Observable.just(try response.mapModel())
+            return Observable.just(try response.data.mapModel())
         })
     }
     
-    func requestJSON(_ target: Target) -> Observable<Response> {
-        return self.doRequest(target)
+    func requestJSON(_ target: Target) -> Observable<Data> {
+        return self.doRequest(target).flatMap({ response -> Observable<Data> in
+            return Observable.just(response.data)
+        })
     }
     
-    private func doRequest(_ target: Target) -> Observable<Response> {
+    private func doRequest(_ target: Target) -> Observable<(response: URLResponse, data: Data)> {
+        let session = URLSession.shared
         return Observable.create { observer in
-            let cancellableToken = self.provider.request(target) { result in
-                do {
-                    let response = try result.dematerialize()
-                    observer.onNext(response)
-                    observer.onCompleted()
-                } catch let error as MoyaError {
-                    observer.onError(DataError.fromMoya(error))
-                } catch {
-                    observer.onError(DataError.underlying(error))
-                }
+            var request = self.endpoint(target)
+            request.httpMethod = target.method.rawValue
+            do {
+                request = try target.parameterEncoding.encode(request: request, parameters: target.parameters)
+                
+                session.dataTask(with: request, completionHandler: { data, response, error in
+                    if let error = error {
+                        observer.onError(error)
+                        observer.onCompleted()
+                    }
+                    
+                    if let response = response, let data = data {
+                        observer.onNext((response: response, data: data))
+                        observer.onCompleted()
+                    }
+                }).resume()
+            } catch {
+                observer.onError(error)
+                observer.onCompleted()
             }
+            
             return Disposables.create {
-                cancellableToken.cancel()
+                session.finishTasksAndInvalidate()
             }
         }
     }

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Moya
 
 enum PhotoListTargetType {
     case getPhotos(albumId: Int)
@@ -27,21 +26,17 @@ extension PhotoListTargetType: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    var method: HTTPMethod {
         switch self {
         case .getPhotos:
-            return Moya.Method.get
+            return .get
         }
     }
     
-    var sampleData: Data {
-        return Data()
-    }
-    
-    var task: Task {
+    var parameters: [String: Any]? {
         switch self {
         case .getPhotos(let albumId):
-            return .requestParameters(parameters: ["albumId": albumId], encoding: URLEncoding.default)
+            return ["albumId": albumId]
         }
     }
 
