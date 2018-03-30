@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mapper
 
 struct Environment: Mappable {
     var baseUrl: String

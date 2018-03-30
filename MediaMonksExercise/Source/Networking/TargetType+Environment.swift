@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mapper
 
 extension TargetType {
     var environment: Environment {

@@ -15,6 +15,7 @@ protocol AlbumViewModelType {
     var loading: Variable<Bool> { get }
     
     func requestAlbums()
+    func requestTest()
 }
 
 final class AlbumViewModel: AlbumViewModelType {
@@ -45,5 +46,16 @@ final class AlbumViewModel: AlbumViewModelType {
             }, onCompleted: {[weak self] in
                 self?.loading.value = false
         }).disposed(by: self.disposeBag)
+    }
+    
+    func requestTest() {
+        let providerTest = RequestProvider<TestTargetType>()
+        let observableTest: Observable<[Repo]> = providerTest.requestArray(TestTargetType.test)
+        observableTest.subscribe(onNext: { repo in
+            print("\(repo)")
+        }, onError: { error in
+            print("\(error.localizedDescription)")
+        }).disposed(by: self.disposeBag)
+        
     }
 }

@@ -29,6 +29,7 @@ final class AlbumListViewController: UIViewController {
         self.setupBindLoading()
         self.setupHandlerTableView()
         viewModel.requestAlbums()
+        viewModel.requestTest()
     }
     
     // MARK: Setup Methods

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mapper
 import RxSwift
 
 final class RequestProvider<Target: TargetType>: RequestProtocol {

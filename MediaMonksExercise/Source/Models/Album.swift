@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mapper
 
 struct Album: Mappable {
     var userId: Int

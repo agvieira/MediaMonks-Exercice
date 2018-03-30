@@ -46,6 +46,11 @@
 		C53AFFBC206C3E43009463FC /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AFFBB206C3E43009463FC /* TargetType.swift */; };
 		C53AFFBE206C402F009463FC /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AFFBD206C402F009463FC /* ParameterEncoding.swift */; };
 		C53AFFC0206C4916009463FC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AFFBF206C4916009463FC /* EndPoint.swift */; };
+		C54BA769206DD1B1008FEC54 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54BA768206DD1B1008FEC54 /* Repo.swift */; };
+		C54BA76B206DD201008FEC54 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54BA76A206DD201008FEC54 /* Owner.swift */; };
+		C54BA76F206DD326008FEC54 /* TestTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54BA76E206DD326008FEC54 /* TestTargetType.swift */; };
+		C5A5DF16206D8DF700BDB72D /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5DF15206D8DF700BDB72D /* Mappable.swift */; };
+		C5A5DF18206D8FC200BDB72D /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5DF17206D8FC200BDB72D /* Mapper.swift */; };
 		D309552CCFD5512C41C22F66 /* Pods_MediaMonksExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47AE168720363B2C00E5764F /* Pods_MediaMonksExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +114,11 @@
 		C53AFFBB206C3E43009463FC /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		C53AFFBD206C402F009463FC /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		C53AFFBF206C4916009463FC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C54BA768206DD1B1008FEC54 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		C54BA76A206DD201008FEC54 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		C54BA76E206DD326008FEC54 /* TestTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTargetType.swift; sourceTree = "<group>"; };
+		C5A5DF15206D8DF700BDB72D /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		C5A5DF17206D8FC200BDB72D /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		D773A6D914BA4431C526F184 /* Pods-MediaMonksExerciseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaMonksExerciseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaMonksExerciseTests/Pods-MediaMonksExerciseTests.release.xcconfig"; sourceTree = "<group>"; };
 		F80C82189B611ADCD2EC5994 /* Pods-MediaMonksExercice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaMonksExercice.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaMonksExercice/Pods-MediaMonksExercice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +234,7 @@
 		477BE7212036399E003941F2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C5A5DF14206D8DDE00BDB72D /* Mappable */,
 				477BE7222036399E003941F2 /* App */,
 				477BE7272036399E003941F2 /* Networking */,
 				477BE72D2036399E003941F2 /* Models */,
@@ -265,6 +276,8 @@
 				477BE72E2036399E003941F2 /* Error.swift */,
 				477BE72F2036399E003941F2 /* Album.swift */,
 				477BE7302036399E003941F2 /* Photo.swift */,
+				C54BA768206DD1B1008FEC54 /* Repo.swift */,
+				C54BA76A206DD201008FEC54 /* Owner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 		477BE7332036399E003941F2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C54BA76C206DD2F6008FEC54 /* Test */,
 				477BE7342036399E003941F2 /* Album */,
 				477BE73D2036399E003941F2 /* Photo */,
 			);
@@ -408,6 +422,31 @@
 				477BE76D203639A8003941F2 /* Info.plist */,
 			);
 			path = MediaMonksExerciseTests;
+			sourceTree = "<group>";
+		};
+		C54BA76C206DD2F6008FEC54 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C54BA76D206DD319008FEC54 /* Target */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		C54BA76D206DD319008FEC54 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				C54BA76E206DD326008FEC54 /* TestTargetType.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		C5A5DF14206D8DDE00BDB72D /* Mappable */ = {
+			isa = PBXGroup;
+			children = (
+				C5A5DF15206D8DF700BDB72D /* Mappable.swift */,
+				C5A5DF17206D8FC200BDB72D /* Mapper.swift */,
+			);
+			path = Mappable;
 			sourceTree = "<group>";
 		};
 		DFDE2DB2BC38214675DA9473 /* Frameworks */ = {
@@ -627,7 +666,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MediaMonksExercise/Pods-MediaMonksExercise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCAlertView/SDCAlertView.framework",
@@ -635,7 +673,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCAlertView.framework",
@@ -674,11 +711,15 @@
 				477BE7582036399E003941F2 /* Error.swift in Sources */,
 				477BE7622036399E003941F2 /* PhotoDatailViewModel.swift in Sources */,
 				477BE7682036399E003941F2 /* NibLoadable.swift in Sources */,
+				C54BA769206DD1B1008FEC54 /* Repo.swift in Sources */,
+				C5A5DF16206D8DF700BDB72D /* Mappable.swift in Sources */,
+				C54BA76B206DD201008FEC54 /* Owner.swift in Sources */,
 				477BE7652036399E003941F2 /* PhotoListViewController.swift in Sources */,
 				477BE75B2036399E003941F2 /* ImageView+Load.swift in Sources */,
 				477BE7562036399E003941F2 /* RequestProvider.swift in Sources */,
 				477BE7532036399E003941F2 /* DataError.swift in Sources */,
 				477BE75D2036399E003941F2 /* AlbumTargetType.swift in Sources */,
+				C5A5DF18206D8FC200BDB72D /* Mapper.swift in Sources */,
 				C53AFFC0206C4916009463FC /* EndPoint.swift in Sources */,
 				477BE75E2036399E003941F2 /* AlbumViewController.swift in Sources */,
 				477BE7522036399E003941F2 /* AppDelegate.swift in Sources */,
@@ -691,6 +732,7 @@
 				477BE7502036399E003941F2 /* Environment.swift in Sources */,
 				477BE7542036399E003941F2 /* Response+MapModel.swift in Sources */,
 				477BE7602036399E003941F2 /* PhotoListViewModel.swift in Sources */,
+				C54BA76F206DD326008FEC54 /* TestTargetType.swift in Sources */,
 				477BE7552036399E003941F2 /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

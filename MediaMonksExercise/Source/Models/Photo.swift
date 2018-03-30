@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Mapper
 
 struct Photo: Mappable {
     var albumId: Int
@@ -19,12 +18,12 @@ struct Photo: Mappable {
         guard let strUrl = strUrl as? String else { return nil }
         return URL(string: strUrl)
     }
-    
+
     init(map: Mapper) throws {
         try albumId = map.from("albumId")
         try photoId = map.from("id")
         try title = map.from("title")
-        url = map.optionalFrom("url", transformation: fromUrl)
-        thumbnailUrl = map.optionalFrom("thumbnailUrl", transformation: fromUrl)
+        try url = URL(string: map.from("url"))
+        try thumbnailUrl = URL(string: map.from("thumbnailUrl"))
     }
 }

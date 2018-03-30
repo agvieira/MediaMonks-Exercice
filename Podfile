@@ -9,7 +9,6 @@ target 'MediaMonksExercise' do
   pod 'SDCAlertView'
   pod 'RxCocoa'
   pod 'Kingfisher'
-  pod 'ModelMapper'
 
   target 'MediaMonksExerciseTests' do
     inherit! :search_paths

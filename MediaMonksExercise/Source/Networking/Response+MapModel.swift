@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Mapper
 
 public extension Data {
-    public func mapModel<Model: Mappable>() throws -> Model {
+    func mapModel<Model: Mappable>() throws -> Model {
         return try self.mapModel(json: self.mapToJSON())
     }
-    public func mapModel<Model: Mappable>() throws -> [Model] {
+    
+    func mapModel<Model: Mappable>() throws -> [Model] {
         let json = try self.mapToJSON()
         guard let jsonArray = json as? NSArray else {
             throw DataError.jsonParse(.invalid(json), self)
